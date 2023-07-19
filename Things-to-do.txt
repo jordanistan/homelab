@@ -1,0 +1,8 @@
+# Create an ansible script to install scripts
+
+vim
+Spacevim = curl -sLf https://spacevim.org/install.sh | bash
+
+oh-my-zsh = sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+Tailscale = curl -fsSL https://tailscale.com/install.sh | sh
