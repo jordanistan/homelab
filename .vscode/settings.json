@@ -1,0 +1,4 @@
+{
+    "DockerRun.DisableDockerrc": true,
+    "ansible.python.interpreterPath": "/usr/local/bin/python3"
+}
