@@ -1,3 +1,4 @@
 .vscode
 token
 .DS_Store
+credentials.pkr.hcl

@@ -1,0 +1,33 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US
+  keyboard:
+    layout: us
+  ssh:
+    install-server: true
+    allow-pw: true
+    disable_root: true
+    ssh_quiet_keygen: true
+    allow_public_ssh_keys: true
+  packages:
+    - qemu-guest-agent
+    - sudo
+  storage:
+    layout:
+      name: direct
+    swap:
+      size: 0
+  user-data:
+    package_upgrade: false
+    timezone: America/Central
+    users:
+      - name: jordan
+        groups: [adm, sudo]
+        lock-passwd: false
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        # passwd: your-password
+        # - or -
+        ssh_authorized_keys:
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDPuPwXye+Ut4L7H+i5+9/LRu4TEGakfQPex1Xdwd7RUmi779hfdSypOMeD4cguyiTrPCxQUSRj9+vE1njmkXxnlw3i1BzaxnofqiTSQ9/k9F/jY/1PHfsDYlrcdLzjUXJeppyZLL1SI7tTP9IWEKzeSXEqDQx9UFZug3d5mP6aBDqbeLnVqqumQK1HO9Q8b27EBC/q+VR8lmO+DTTT/l/qty+ZOQTKWcgRMMohzMTDXYv0A7M9ZR/oxXkcT3vT/8xlqNYqYEn5kTUL8sC1qZktXgYB1ck6RDD7K30c8yFQ2fEQPjA1VlHF/TfSt1BCHyBh0ZUYQYJJBf7GyYvNNvs0cCTOHY4TifKyQdkgFPQIwXPTxzX2au39zGMcBobMnl4jLPlfg2u4q5BRvGpnKSghmYeJl8ZeOMX1boRIswAUKVcJCSaT4V1NbPrXkd3LKLALQWfGdTk5fWo5FZs5Fx2cuuO2V7vcA2G3H67xpvblMRnCh4Kn+Y+vWsD5sKz/+gZkV122oilOfEL4khBqaOpAGLqTSEM/YV2MzUz+NzShn5I2VVBAAosQkQpA2ro3KbE4/lG2rpmrFrPVkJC3LWT6IVPl52uOJIFJyBddtI3fl2rUWyusyLDLOWckr3lBs3xtAGpOmxWUpUkD2nf2yRiZHeFukjxC2JY6j9Cuf/szQQ== jordan.robison@gmail.com
