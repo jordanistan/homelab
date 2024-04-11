@@ -2,3 +2,4 @@
 token
 .DS_Store
 credentials.pkr.hcl
+vars.yml
